@@ -36,13 +36,14 @@ recognition.unresult = function (event) {
 
 recognition.onspeechend = () => {
   recognition.stop();
+  console.log("stop")
 };
 
 recognition.onerror = (event) => {
   message.textContent = "Error." + event.error;
 };
 
-recognition.onnomatch = (event) => {
+recognition.onnomatch = function (event) {
   message.textContent = "I didn't recognise what you said.";
 };
 
